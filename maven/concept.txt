@@ -1,0 +1,55 @@
+archetype:
+	 An archetype is defined as an original pattern or model from which all other things of the same kind are made.
+	In Maven, an archetype is a template of a project which is combined with some user input to produce a working Maven project that has been tailored to the user's requirements. 
+
+Super POM
+	The Super POM is Maven's default POM. All POMs extend the Super POM unless explicitly set, meaning the configuration specified in the Super POM is inherited by the POMs you created for your projects.
+
+Minimal POM
+	The minimum requirement for a POM are the following:
+		project root
+		modelVersion - should be set to 4.0.0
+		groupId - the id of the project's group.
+		artifactId - the id of the artifact (project)
+		version - the version of the artifact under the specified group
+
+Project Interpolation
+	One factor to note is that these variables are processed after inheritance as outlined above. This means that if a parent project uses a variable, then its definition in the child, not the parent, will be the one eventually used.
+Variable
+	example 1
+	<project>
+		<parent>
+			<groupId>com.mycompany.app</groupId>
+			<artifactId>my-app</artifactId>
+			<version>1</version>
+			<relativePath>../parent/pom.xml</relativePath>
+  		</parent>
+		<modelVersion>4.0.0</modelVersion>
+	 	<artifactId>my-module</artifactId>
+	</project>
+	Any field of the model that is a single value element can be referenced as a variable. For example, ${project.groupId}, ${project.version}, ${project.build.sourceDirectory}
+	
+	example 2
+	You are also able to reference any properties defined in the project as a variable.
+	<project>
+		...
+		<properties>
+		<mavenVersion>2.1</mavenVersion>
+		</properties>
+		<dependencies>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-artifact</artifactId>
+			<version>${mavenVersion}</version>
+    		</dependency>
+    		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-project</artifactId>
+			<version>${mavenVersion}</version>
+		</dependency>
+		</dependencies>
+  		...
+	</project>
+
+Plugin:
+	Maven is - at its heart - a plugin execution framework; all work is done by plugins. 
