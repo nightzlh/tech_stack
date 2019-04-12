@@ -1,0 +1,6 @@
+code: 1
+data: ""
+msg: "添加成功！"
+url: "http://127.0.0.1:8082/admin/pic_manager/index.html"
+wait: 3
+

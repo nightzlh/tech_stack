@@ -1,0 +1,6 @@
+ Vue Devtools in your browser, allowing you to inspect and debug your Vue applications in a more user-friendly interface.
+
+Don’t use the minified version during development. You will miss out on all the nice warnings for common mistakes!
+
+For production, we recommend linking to a specific version number and build to avoid unexpected breakage from newer versions:
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>

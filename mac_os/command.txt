@@ -1,0 +1,4 @@
+grep:
+	grep -n(显示行号) -r(递归当前目录) keyword file_name
+find:
+	find path -iname file_name
