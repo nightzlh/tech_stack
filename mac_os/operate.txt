@@ -1,0 +1,7 @@
+php 配置路径
+/usr/local/etc/php/7.2
+
+nginx配置路径
+/usr/local/etc/nginx/nginx.conf
+nginx日志路金
+/usr/local/var/log/nginx/access.log
