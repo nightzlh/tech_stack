@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>draggable demo</title>
+  <link rel="stylesheet" href="../jquery-ui-1.12.1/jquery-ui.css">
+  <style>
+  #draggable {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+  </style>
+  <script src="../jquery-1.12.4.js"></script>
+  <script src="../jquery-ui-1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+ 
+<div id="draggable">Drag me</div>
+ 
+<script>
+$( "#draggable" ).draggable({
+	revert: "invalid",
+	stop: function( event, ui ) {console.log("stop");}
+});
+</script>
+ 
+</body>
+</html>
