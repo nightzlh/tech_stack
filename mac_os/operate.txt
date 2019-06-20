@@ -1,7 +1,18 @@
 php 配置路径
 /usr/local/etc/php/7.2
 
+sudo php-fpm -D
+killall php-fm
+
 nginx配置路径
 /usr/local/etc/nginx/nginx.conf
 nginx日志路金
 /usr/local/var/log/nginx/access.log
+
+sudo nginx
+sudo nginx stop
+
+screen -ls			查看screen进程
+screen -r targetId	进入某个进程的screen
+ctl + a + d			退出screen
+ctl + c 			关闭
