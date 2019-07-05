@@ -1,0 +1,15 @@
+composer.log
+	If there is already a composer.lock file as well as a composer.json file when you run composer install, it means either you ran the install command before, or someone else on the project ran the install command and committed the composer.lock file to the project (which is good).
+	
+Packagist
+	Packagist is the main Composer repository. 
+
+Platform packages
+	Composer has platform packages, which are virtual packages for things that are installed on the system but are not actually installable by Composer. This includes PHP itself, PHP extensions and some system libraries
+
+Autoloading
+	For libraries that specify autoload information, Composer generates a vendor/autoload.php file. You can simply include this file and start using the classes that those libraries provide without any extra work:
+	require __DIR__ . '/vendor/autoload.php';
+	$log = new Monolog\Logger('name');
+	$log->pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger::WARNING));
+	$log->addWarning('Foo');.

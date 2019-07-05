@@ -2,3 +2,21 @@ grep:
 	grep -n(显示行号) -r(递归当前目录) keyword file_name
 find:
 	find path -iname file_name
+
+grep -rn SQL | grep '`goods_id` = 148\|(148'
+
+curl -sS url
+		-S, --show-error
+              When  used  with  -s,  --silent,  it  makes curl show an error message if it
+              fails.
+		-s, --silent
+              Silent or quiet mode. Don't show progress meter or  error  messages.   Makes
+              Curl  mute.  It  will still output the data you ask for, potentially even to
+              the terminal/stdout unless you redirect it.
+
+              Use -S, --show-error in addition to this option to  disable  progress  meter
+              but still show error messages.
+
+              See also -v, --verbose and --stderr.
+
+
