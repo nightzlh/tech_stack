@@ -1,0 +1,9 @@
+php composer.phar install
+
+php composer.phar update
+	This will fetch the latest matching versions (according to your composer.json file) and update the lock file with the new versions.
+
+If you only want to install or update one dependency, you can whitelist them:
+	php composer.phar update monolog/monolog
+
+
