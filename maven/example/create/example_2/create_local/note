@@ -1,0 +1,6 @@
+按照官网文档:
+	archetypeCatalog参数local定义
+	local represents the ~/.m2/archetype-catalog.xml catalog file
+	实际应该是 ~/.m2/repository/archetype-catalog.xml
+
+
