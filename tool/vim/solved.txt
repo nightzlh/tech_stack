@@ -1,0 +1,4 @@
+恢复.swap中的内容
+	:recover" 或 "vim -r exportcert.cpp
+	
+环境变量中的$VIM $VIMRUNTIME 要配置真实路径 不可以是软链接

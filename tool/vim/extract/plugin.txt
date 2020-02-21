@@ -1,0 +1,5 @@
+add plugin:
+	You can add a plugin very easily by dropping it in your plugin directory.
+
+$VIM 
+	macos: /usr/share/vim/vim80

@@ -1,0 +1,36 @@
+how to copy between different window presudo terminal?
+
+what is tmux mark?
+
+how to set pane layout?
+
+adjust pane size?
+
+window
+	open/close window
+	show window list
+	switch window
+		tmux swap-window [-d] [-s src-window] [-t dst-window]
+	set quick_cmd for swap-window?
+	name a window
+
+switch session
+	open/close session
+	show session list
+	switch session
+	name a session
+
+custom key-binding?
+
+command-prompt [-1Ni] [-I inputs] [-p prompts] [-t target-client]
+
+
+bind is alias for bind-key
+	tmux bind-key h select-pane -L
+	
+	
+how to remove C-r key map in mac
+
+what is buffer
+
+

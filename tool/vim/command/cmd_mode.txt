@@ -1,0 +1,3 @@
+enter select mode
+- Using "gh", "gH" or "g_CTRL-H" command in Normal mode.
+- From Visual mode, press CTRL-G.

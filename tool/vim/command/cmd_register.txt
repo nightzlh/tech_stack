@@ -1,0 +1,22 @@
+There are nine types of registers:			*registers* *E354*
+1. The unnamed register ""
+2. 10 numbered registers "0 to "9
+3. The small delete register "-
+4. 26 named registers "a to "z or "A to "Z
+5. four read-only registers ":, "., "% and "#
+6. the expression register "=
+7. The selection and drop registers "*, "+ and "~ 
+8. The black hole register "_
+9. Last search pattern register "/
+
+:reg[isters]
+	Display the contents of all numbered and named registers.  If a register is written to for |:redir| it will not be listed.  {not in Vi}
+
+:reg[isters] {arg}
+:di[splay] [arg]
+	Display the contents of the numbered and named registers that are mentioned in {arg}.  For example: :dis 1a to display registers '1' and 'a'.  Spaces are allowed in {arg}.  {not in Vi}
+
+example to put data into register x
+	sentence to be put into register x
+move curser to s, type "xy2w, "then sentence to" will be put into register x
+

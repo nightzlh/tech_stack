@@ -1,0 +1,22 @@
+$VIM
+
+The environment variable "$VIM" is used to locate various user files for Vim,
+such as the user startup script ".vimrc".  This depends on the system, see
+|startup|
+
+$VIMRUNTIME
+The environment variable "$VIMRUNTIME" is used to locate various support
+files, such as the on-line documentation and files used for syntax
+highlighting.  For example, the main help file is normally
+"$VIMRUNTIME/doc/help.txt".
+
+environment variable 
+	$VIMRUNTIME 
+	如果$VIMRUNTIME/doc下没有doc目录 :help无法给出VIM帮助文档
+	
+	
+
+echo $VIMRUNTIME
+echo $VIM
+
+环境变量中的$VIM $VIMRUNTIME 要配置真实路径 不可以是软链

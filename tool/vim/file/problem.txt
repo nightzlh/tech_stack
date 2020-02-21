@@ -1,0 +1,1 @@
+when some files whith this same name in the dir, how to get the select option to open one

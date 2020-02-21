@@ -1,0 +1,7 @@
+Press  CTRL-]  to jump to a subject under the cursor.
+Press  CTRL-O  to jump back (repeat to go further back).
+
+
+In doc 02.8
+    Finding help
+

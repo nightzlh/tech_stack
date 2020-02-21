@@ -1,0 +1,6 @@
+grep
+    grep --exclude='*php' 注意要单引号
+    
+ln [-s] source_file targe_file
+    -s 建立软链接
+    默认建立硬链接

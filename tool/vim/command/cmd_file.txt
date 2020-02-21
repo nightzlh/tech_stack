@@ -1,0 +1,52 @@
+---- open with mutlti files ----
+	vim one.c two.c three.c
+
+---- switch files by 1 delta ----
+:next 
+	 to edit the next file you use this command
+:next!
+	To abandon the changes and edit the next file you use this command
+:wnext = :write :next 
+	But mostly you want to save the changes and move on to the next file
+:previous
+	To go back one file
+:wprevious = :write :previous
+
+---- switch files by multi delta ----
+
+:{count}next
+:{count}previous
+
+---  switch to special file
+:last
+:first
+
+---- switch autowrite ----
+
+:set autowrite
+:set noautowrite
+
+--- file list ----
+show file list
+:args
+	files you started Vim with
+
+add files to file list
+:args five.c six.c seven.c
+:args *.xml
+
+---- "alternate" file ----
+The file you were previously editing is called the "alternate" file.
+CTRL-^
+	Edit the alternate file.  Mostly the alternate file is the previously edited file.  This is a quick way to toggle between two files.
+	It is equivalent to ":e #",except that it also works when there is no file name.
+
+---- MARKS ----
+
+---- predefined marks ----
+`" This takes you to the position where the cursor was when you left the file.
+`.  mark that is remembered is the position where you made the last change
+
+---- file marks ----
+
+

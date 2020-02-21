@@ -1,0 +1,15 @@
+$VIM
+	The environment variable "$VIM" is used to locate various user files for Vim,
+such as the user startup script ".vimrc".
+	get $VIM: (:echo $VIM)
+
+in mac: /usr/share/vim
+
+
+$VIMRUNTIME
+
+in mac: /usr/share/vim/vim80
+
+get help by key word
+	example: :help *VIMRUNTIME*
+			 :help VIMRUNTIME 	

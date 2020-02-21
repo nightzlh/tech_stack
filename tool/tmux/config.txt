@@ -1,0 +1,9 @@
+mac:
+
+系统配置目录:/usr/local/etc/tmux.conf
+用户配置: ~/.tmux.conf
+
+centos:
+
+系统配置目录: /etc/tmux.conf
+用户配置: ~/.tmux.conf

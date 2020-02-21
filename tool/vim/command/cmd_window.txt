@@ -1,0 +1,48 @@
+---- split(create)----
+
+:{height} split {new(file name)}
+:{width} vsplit {new(file_name)}
+
+new is used for create new file when (v)split
+
+---- window size ----
+height: the top is fixed
+	{height} CTRL-w _		set heighest possible
+	{height} CTRL-w -		delta
+	{height} CTRL-w +		delta
+
+	:res[size] -{height}	delta
+	:res[size] +{height}	delta
+
+	z{nr}<CR>				set by value nr
+
+width:	the left is fixed
+	{width} CTRL-w |		set widest possible
+	{width} CTRL-w < 		delta
+	{width} CTRL_w > 		delta	
+
+	:virtical res[size] +{width}
+	:virtical res[size] -{width}
+
+
+---- close ----
+close window
+	:close prevents you from accidentally exiting Vim when you close the
+last window.e
+	:x
+	:quit
+	ZZ
+	:only This closes all windows, except for the current one
+
+
+---- window move ---
+CTRL-W h	move to the window on the left
+CTRL-W j	move to the window below
+CTRL-W k	move to the window above
+CTRL-W l	move to the window on the right
+	
+CTRL-W t	move to the TOP window		//左上角
+CTRL-W b	move to the BOTTOM window	//右下角 
+
+CTRL-w H	竖直最大化
+CTRL-w J	水平最大化

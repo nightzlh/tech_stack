@@ -1,0 +1,72 @@
+COMMAND PARSING AND EXECUTION
+
+PARSING SYNTAX 
+
+COMMANDS
+
+CLIENTS AND SESSIONS 
+
+WINDOWS AND PANES
+	Copy mode
+	View mode
+	Choose mode
+
+KEY BINDINGS
+
+HOOKS
+
+MOUSE SUPPORT    
+
+FORMATS
+	This is a string which controls the output format of the command.Format variables are enclosed in ‘#{’ and ‘}’, for example ‘#{session_name}’
+	Conditionals can be nested arbitrarily. 
+	format variable escape:  
+		Some variables have a shorter alias such as ‘#S’; ‘##’ is replaced by a single ‘#’, ‘#,’ by a ‘,’ and ‘#}’ by a ‘}’.
+	condition:
+		prefixing with ‘?’ and separating two alternatives with a comma;
+		example:
+			if the specified variable exists and is not zero, the first alternative is chosen, otherwise the second is used.  
+			For example ‘#{?session_attached,attached,not attached}’ will include the string ‘attached’
+	
+	regular expression comparision:
+		first argument: is the pattern
+		second argument: the string to compare	
+		third argument (optional):  ‘r’ means the pattern is a regular expression instead of the default fnmatch(3) pattern, and ‘i’ means to ignore case.
+		example:
+			‘#{m:*foo*,#{host}}’ or ‘#{m/ri:^A,MYVAR}’. 
+		C/: used for index output
+			A ‘C’ performs a search for an fnmatch(3) pattern or regular expression in the pane content and evaluates to zero if not found, or a line number if found.	
+		example:
+			‘#{C/r:^Start}’
+		
+STYLES
+	
+
+NAMES AND TITLES 
+
+GLOBAL AND SESSION ENVIRONMENT 
+
+STATUS LINE 
+
+MISCELLANEOUS
+
+TERMINFO EXTENSIONS
+
+CONTROL MODE 
+
+ENVIRONMENT
+
+FILES
+
+EXAMPLES
+
+
+prefix key table
+root table
+custom key tables
+
+commnad-prompt
+	templat: If template is specified, it is used as the command.
+	-I: is a comma-separated list of the initial text for each prompt.  
+	-P:  If -p is given, prompts is a comma-separated list of prompts which are displayed in order 
+ 		

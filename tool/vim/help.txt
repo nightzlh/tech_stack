@@ -1,0 +1,8 @@
+in doc 02.8
+    how to get vim help
+
+help key words
+	help reg
+	help select-mode
+	help \[\"x\] = help ["x]
+	

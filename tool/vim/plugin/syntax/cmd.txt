@@ -1,0 +1,1 @@
+:scriptnames 查看已加载的插件  

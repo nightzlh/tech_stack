@@ -1,0 +1,12 @@
+command-pormpt:[-1ikN] [-I inputs] [-p prompts] [-t target-client] [template]
+	template: it is used as the command
+	-I: is a comma-separated list of the initial text for each prompt. 	
+	-P: prompts is a comma-separated list of prompts which are displayed in order.otherwise a single prompt is displayed, constructed from template if it is present, or ‘:’ if not.
+	
+example:
+	rename-window:	
+		bind -n C-x command-prompt -I "#{window_name}" "rename-window '%%'"  	
+	swap-window:
+		bind -n C-w command-prompt -p "first win: ","second  win: " "swap-window -s '%1' -t '%2'"	
+	
+		

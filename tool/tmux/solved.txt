@@ -1,0 +1,3 @@
+key x and key C-x can not both been binded
+if key x is binded, then C-x can not been binded
+if C-x is banded, then x can not been binded

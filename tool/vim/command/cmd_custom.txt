@@ -1,0 +1,19 @@
+:command:  list the user-defined commands
+:map:	   list user-defined map
+
+commands can be
+abbreviated.  You need to type just enough to distinguish the command from
+another
+
+define a command
+
+command -nargs=0 DeleteFirst 1delete
+
+zero arguments is the default, you do not need to add
+"-nargs=0".
+
+	-nargs=0	No arguments
+	-nargs=1	One argument
+	-nargs=*	Any number of arguments
+	-nargs=?	Zero or one argument
+	-nargs=+	One or more arguments

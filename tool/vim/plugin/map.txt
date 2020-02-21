@@ -1,0 +1,9 @@
+    commands:					    modes: 
+					Normal  Visual+Select  Operator-pending 
+:map   :noremap   :unmap   :mapclear	 yes	    yes	       yes
+:nmap  :nnoremap  :nunmap  :nmapclear	 yes	     -	        -
+:vmap  :vnoremap  :vunmap  :vmapclear	  -     yes	    -
+:omap  :onoremap  :ounmap  :omapclear	  -      -	   yes
+
+noremap equals to map
+    Using ":noremap <script>" is preferred, because it's clearer that remapping is (mostly) disabled.

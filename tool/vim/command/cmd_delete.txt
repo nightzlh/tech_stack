@@ -1,0 +1,6 @@
+CTRL-H: i_CTRL-H
+	Delete the character before the cursor
+CTRL-W:
+	Delete the wored before the cursor
+CRUL_U:
+	Delete all entered characters in the current line

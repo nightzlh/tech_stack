@@ -1,0 +1,2 @@
+let mapleader = "\<Space>"
+inoremap <Leader>; <Esc>

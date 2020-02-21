@@ -1,0 +1,6 @@
+delete
+    normal x remove a character -> (num)x
+    normal d motion cmd: delete from cur point to point after moved 
+	example: d4w d2e d$
+connect
+    normal J connect next line to cur line 

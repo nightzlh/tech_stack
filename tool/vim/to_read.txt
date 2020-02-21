@@ -1,0 +1,4 @@
+https://engagor.github.io/blog/2017/01/01/vim-ide-setting-up/
+
+vim concept:
+Operator-pending

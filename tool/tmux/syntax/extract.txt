@@ -1,0 +1,68 @@
+commands parse:
+	parsed by tmux: configuration file,command prompt
+	parsed by shell:  commands are entered into the shell 
+
+command:
+	Each command is terminated by a newline or a semicolon (;)
+
+command sequence:
+	Commands separated by semicolons together form a ‘command sequence’ - 
+	if a command in the sequence encounters an error, no subsequent commands are executed.
+
+conditionally parse command:
+	Commands may be parsed conditionally by surrounding them with ‘%if’, ‘%elif’, ‘%else’ and ‘%endif’	
+
+		%if "#{==:#{host},myhost}"
+	        set -g status-style bg=red
+	        %elif "#{==:#{host},myotherhost}"
+	        set -g status-style bg=green
+        	%else
+	        set -g status-style bg=blue
+        	%endif
+
+comment:
+	 marked by the unquoted # character - any remaining text after a comment is ignored until the end of the line.
+
+code join (\):
+	the line is joined with the following line (the \ and the newline are completely removed).
+
+Command arguments:
+	Command arguments may be specified as strings surrounded by single (') quotes, double quotes (") or braces ({}).
+
+Variable:
+	environment variabs:
+		 preceded by $ are replaced with their value from the global environment.
+	set environment variable:		
+		Environment variables may be set by using the syntax ‘name=value’, for example ‘HOME=/home/user’. 	
+	user dir variable:
+		A leading ~ or ~user is expanded to the home directory of the current or specified user.
+	unicode variable:	
+	 	\uXXXXXXXX is replaced by the Unicode codepoint corresponding to the given four or eight digit hexadecimal number.
+	escaped varialbe(\):
+		the following characters are replaced: \e by the escape character; \r by a carriage return; \n by a newline; and \t by a tab.
+	octal variable(\ooo):
+		is replaced by a character of the octal value ooo.Three octal digits are required, for example \001.The largest valid character is \377.	
+	other character whith (\):
+		Any other characters preceded by \ are replaced by themselves (that is, the \ is removed) and are not treated as having any special meaning - so for example \; will not mark a command sequence and \$ will not expand an environment variable.	
+
+brace:
+	the text inside is taken literally without any replacements but this also includes line continuation.Braces can span multiple lines in which case a literal newline is included in the string.
+	example:
+		if-shell true {
+               		display -p 'brace-dollar-foo: }$foo'
+           	}
+           	if-shell true "\n    display -p 'brace-dollar-foo: }\$foo'\n"	
+	
+		bind x if-shell "true" {
+               		if-shell "true" {
+                   		display "true!"
+	               }
+        	}	
+	
+	Braces may be enclosed inside braces 
+	example:
+	  bind x if-shell "true" {
+               if-shell "true" {
+                   display "true!"
+               }
+           }

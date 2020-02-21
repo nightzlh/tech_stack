@@ -1,0 +1,5 @@
+show vim srcipt variable when edit file
+:echo varName
+
+python3 config_dir = /usr/lib64/python3.4/config-3.4m 
+python2 config_dir = /usr/lib64/python2.6/config

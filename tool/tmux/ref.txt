@@ -1,0 +1,3 @@
+https://tmuxguide.readthedocs.io/en/latest/tmux/tmux.html
+
+https://unix.stackexchange.com/questions/158278/tmux-how-do-i-bind-to-c-control-minus

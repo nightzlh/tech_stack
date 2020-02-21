@@ -1,0 +1,61 @@
+---- boot arg ----
+vim -p file ...
+	opens each file argument in a separate tab page
+
+---- create tab ----
+[count]tabe[dit] [++opt] [+cmd] {file} = [count]tabne [++opt] [+cmd] {file}
+	Open a new tab page with an empty window, after the current tab page.
+
+[count]tabf[ind]
+	Open a new tab page and edit {file} in 'path'
+
+[count]tab {cmd}
+	Execute {cmd} and when it opens a new window open a new tab page instead.
+
+CTRL-w gf
+	Open a new tab page and edit the file name under the cursor.
+CTRL-w gF
+	Open a new tab page and edit the file name under the cursor and jump to the line number following the file name.
+
+
+--- close tab ----
+
+:tabc[lose][!] {count}
+	lose current tab page.
+
+:tabc[lose][!] 
+	Close tab page {count}.
+
+:tabo[nly][!]
+	Close all other tab pages.
+
+---- swtich tab ----
+
+-- move delta 1 --
+
+:tabn[ext] = gt
+	goto next tag page
+
+-- go previous/left/back
+
+:tabp[revious] = gT
+	goto previous page
+
+-- move delta n > 1
+
+{count}gT
+	go {count} tab pages back Wraps around from the first one to the last one.
+
+:tabp[revious] {count}
+	goto tab page {count}
+
+-- move to
+
+:tabn[ext] {count}
+	goto tab page {count}
+:tabfir[st]
+
+:tabl[ast]
+
+{count}gt
+

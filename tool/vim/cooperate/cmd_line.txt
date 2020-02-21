@@ -1,0 +1,2 @@
+use !in vim cmd to execute shel command
+example: !make

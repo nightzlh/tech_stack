@@ -1,0 +1,5 @@
+se[t]	{option}?	show value of {optino}
+se[t]	{option}	Toggle option: set, switch it on.
+			Number option: show value.
+			String option show value
+se[t] no{option} 	Toggle option: Reset, switch it off

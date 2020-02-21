@@ -1,0 +1,2 @@
+<leader>f  search file
+<leader>b  seach buffer

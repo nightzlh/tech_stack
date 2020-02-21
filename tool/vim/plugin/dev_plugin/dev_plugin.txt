@@ -1,0 +1,8 @@
+git plugin:
+"Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jisaacks/GitGutter'
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'vim-nerdtree/nerdtree'
+"Plugin 'preservim/nerdcommenter'
+"Plugin 'ycm-core/YouCompleteMe'

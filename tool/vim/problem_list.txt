@@ -1,0 +1,19 @@
+// how to max a window and size back
+
+max:
+	max height CTL-C + _
+	max width  CTL_C + |
+
+// look a file in path
+:ls path 
+ls ./
+
+// how to debug php in vim
+
+
+// 字体放大
+
+// mac中<-按键无法删除 或者 无法回退到上面一行
+
+
+what is Mru

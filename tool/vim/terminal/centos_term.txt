@@ -1,0 +1,3 @@
+remove terminal shutcut
+    edit->reference->general->Enable the menu accelerator key(F10)
+    edit->reference->shutcut
