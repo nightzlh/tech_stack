@@ -1,0 +1,28 @@
+---- model ----
+
+base model class:
+	Illuminate\Database\Eloquent\Model
+
+create model cmd:
+	php artisan make:model Flight
+
+
+set table name in model class:
+	protected $table = 'my_flights';
+	
+set non-incrementing or a non-numeric primary key 
+	public $incrementing = false;
+	protected $keyType = 'string';
+
+
+default columns created_at and updated_at 
+	Eloquent expects created_at and updated_at columns to exist on your tables
+
+cancel default columns created_at and updated_at
+	set the $timestamps property on your model to false:
+	public $timestamps = false;
+
+
+customize the format of your timestamps
+	set the $dateFormat property on your model
+		

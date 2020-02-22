@@ -1,0 +1,55 @@
+---- cmd about auth ----
+These two commands will take care of scaffolding your entire authentication system
+	php artisan make:auth
+	php artisan migrate
+
+---- auth config ----
+config/auth.php
+
+---- database Considerations ----
+
+sure the password column is at least 60 characters in length.Maintaining the default string column length of 255 characters would be a good choice.
+
+users (or equivalent) table contains a nullable, string  remember_token column of 100 characters. 
+
+---- "guards" and "providers".  ----
+
+gards:
+	Guards define how users are authenticated for each request. 
+providers:
+	define how users are retrieved from your persistent storage. 
+
+---- Database Considerations ----
+
+authentication driver
+	default Eloquent authentication driver: App\User Eloquent model
+	database authentication driver:	which uses the Laravel query builder.
+
+---- controller ----
+pre-built authentication controllers, which are located in the  App\Http\Controllers\Auth namespace.
+	RegisterController LoginController ForgotPasswordController ResetPasswordController
+
+---- routing ----
+php artisan make:auth this create changes
+	app/Http/Controllers/HomeController.php
+	resources/views/auth/
+    resources/views/home.blade.php
+    resources/views/layouts/
+	in file routes/web.php
+		add line Auth::routes();
+
+	
+---- redirect when authenticated ----
+ You can customize the post-authentication redirect location by defining a redirectTo property on the LoginController, RegisterController, ResetPasswordController, and VerificationController:
+	protected $redirectTo = '/';
+ custom generation logic you may define a redirectTo method instead of a redirectTo property
+protected function redirectTo()
+{
+    return '/path';
+}
+	
+---- operate ----
+php artsan make:auth
+	Now that you have routes and views setup for the included authentication controllers, you are ready to register and authenticate new users for your application! 
+
+

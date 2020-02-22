@@ -1,0 +1,6 @@
+---- middleware concept ----
+Middleware provide a convenient mechanism for filtering HTTP requests entering your application. 
+
+example
+	Illuminate\View\Middleware\ShareErrorsFromSession middleware
+	The $errors variable is bound to the view by the  Illuminate\View\Middleware\ShareErrorsFromSession middleware, which is provided by the web middleware group. When this middleware is applied an  $errors variable will always be available in your views, allowing you to conveniently assume the $errors variable is always defined and can be safely used.
