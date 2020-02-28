@@ -1,1 +1,4 @@
-
+store data to clipboard 
+in normal mode:
+	"*yy
+	"*p

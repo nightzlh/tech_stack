@@ -1,0 +1,42 @@
+function: explore, filesystem operations , filter file, order node 
+
+You can have a separate NERDTree for each tab, share trees across tabs, or a mix of both.
+
+* A programmable menu system is provided (simulates right clicking on a node)
+        * one default menu plugin is provided to perform basic filesystem
+          operations (create/delete/move/copy files/directories)
+
+
+base command
+:NERDTree [<start-directory> | <bookmark>]                           *:NERDTree*
+:NERDTreeVCS [<start-directory> | <bookmark>]                     *:NERDTreeVCS*
+:NERDTreeFromBookmark <bookmark>                         *:NERDTreeFromBookmark*
+:NERDTreeToggle [<start-directory> | <bookmark>]               *:NERDTreeToggle*
+:NERDTreeToggleVCS [<start-directory> | <bookmark>]            *:NERDTreeToggleVCS*
+:NERDTreeFocus                                                  *:NERDTreeFocus*
+:NERDTreeMirror                                                *:NERDTreeMirror*
+:NERDTreeClose                                                  *:NERDTreeClose*
+:NERDTreeFind [<path>]                                           *:NERDTreeFind*
+:NERDTreeCWD                                                      *:NERDTreeCWD*
+:NERDTreeRefreshRoot                                      *:NERDTreeRefreshRoot*
+
+book mark commands
+
+
+manipulatheree and/or get information from it
+	g:NERDTreePath
+	g:NERDTreeDirNode
+	g:NERDTreeFileNode
+	g:NERDTreeBookMarke
+
+add key map
+	user API: NERDTreeAddKeyMap({options})	
+	
+api for menu
+	NERDTreeAddSubmenu
+	NERDTreeAddMenuItem
+	NERDTreeAddMenuSeparator
+	
+other api
+	NERDTreeAddPathFilter(callback) 
+	NERDTreeRender() 

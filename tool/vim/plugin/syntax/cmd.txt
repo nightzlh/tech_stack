@@ -1,1 +1,6 @@
 :scriptnames 查看已加载的插件  
+
+load  vim  plugin
+	:source path
+	:so %
+

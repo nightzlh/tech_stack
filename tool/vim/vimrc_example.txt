@@ -1,2 +1,11 @@
-let mapleader = "\<Space>"
+
+let mapleader = "\<Space>" 
+
+syntax on
+set nu
+
 inoremap <Leader>; <Esc>
+imap <Leader>h <ESC>^i
+imap <Leader>t <ESC>$i
+nmap <Leader>h <ESC>^
+nmap <Leader>t <ESC>$

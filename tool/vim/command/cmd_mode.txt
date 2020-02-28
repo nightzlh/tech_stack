@@ -1,3 +1,8 @@
+visual mode
+	enter: press v (from normal to visual)
+	leave: press v (from visual to normal)
+
 enter select mode
-- Using "gh", "gH" or "g_CTRL-H" command in Normal mode.
-- From Visual mode, press CTRL-G.
+	enter:
+		- Using "gh", "gH" or "g_CTRL-H" command in Normal mode.
+		- From Visual mode, press CTRL-G.

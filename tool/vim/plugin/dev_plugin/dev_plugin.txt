@@ -6,3 +6,5 @@ git plugin:
 "Plugin 'vim-nerdtree/nerdtree'
 "Plugin 'preservim/nerdcommenter'
 "Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'tpope/vim-pathogen'
+"Plugin 'shawncplus/phpcomplete.vim'
