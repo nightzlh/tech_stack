@@ -1,0 +1,4 @@
+scheme:
+	set scheme cmd: :colorscheme evening	
+	scheme dir: $VIMRUNTIME/colors  
+	
