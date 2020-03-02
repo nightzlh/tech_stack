@@ -1,0 +1,27 @@
+Entry:
+	concept:indicates which module webpack should uso begin building out its internal dependency graphe
+	default value: ./src/index.js
+	example:
+		module.exports = {
+			entry: './path/to/my/entry/file.js'
+		};
+
+Output:
+	concept: to emit the bundles it creates and how to  name these files.It defauts to ./dist/main.js for the main output file and the ./dist folder for any other generated file.
+  	example:
+	
+		const path = require('path');
+	
+		module.exports = {
+			entry: './path/to/my/entry/file.js',
+			output: {
+				path: path.resolve(__dirname, 'dist'),
+				filename: 'my-first-webpack.bundle.js'
+ 	 		}
+		};	
+		output.filename:
+			tell webpack the name of our bundle and where we want it to be emitted to.	
+		output.path:
+			 where we want it(bundle) to be emittedot
+Loaders:
+	webpack only understand JavaScript and JSON files.Loaders allow webpack to process other types of file  and  convert them to invalid modules that  can be consumed by your application and  added to the  dependency graph 

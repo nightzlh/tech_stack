@@ -1,0 +1,4 @@
+P:	Vim doesn't reahe whole fileo parseheext.  It starts parsing wherever you are viewinghe file.  That saves a lot ofime, but sometimeshe colors are wrong.d
+S:	Some syntax fileo make help forit look further back, seehehe specific syntax file. s
+
+
