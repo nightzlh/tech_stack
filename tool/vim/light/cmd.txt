@@ -2,4 +2,8 @@
 :set background=dark
 :set background=light
 
+:syntax off
+:syntax manual
+:set syntax=ON
+
 

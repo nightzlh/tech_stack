@@ -1,0 +1,3 @@
+http://vimdoc.sourceforge.net/htmldoc/syntax.html#syntax
+
+http://vimdoc.sourceforge.net/htmldoc/usr_44.html

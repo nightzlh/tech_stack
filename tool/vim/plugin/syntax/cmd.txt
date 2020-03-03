@@ -4,3 +4,5 @@ load  vim  plugin
 	:source path
 	:so %
 
+:ru[ntime][!]   
+	Read Ex commands from {file}  in each directory given by  'runtimepath'  and/or  'packpath'. There is no error for non-existing files
