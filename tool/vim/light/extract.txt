@@ -2,3 +2,4 @@ scheme:
 	set scheme cmd: :colorscheme evening	
 	scheme dir: $VIMRUNTIME/colors  
 	
+$VIMRUNTIME/syntax/hitest.vim

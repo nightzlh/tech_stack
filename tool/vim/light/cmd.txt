@@ -1,3 +1,18 @@
+// syntax for base config
+:syntax clear
+	Before we start defining any new syntax, we need to clear out any old definitions:
+
+:syntax:
+	To check which syntax items are currently defined
+
+:syntax case
+	look up current syntax case value;
+:syntax case match
+	set syntax case to match
+	set stynax case to ignore 
+
+
+
 :syntax enable
 :set background=dark
 :set background=light
@@ -6,4 +21,39 @@
 :syntax manual
 :set syntax=ON
 
+// option for syntax
+iskeyword
+	The characters used in a keyword must be in the 'iskeyword' option. 
+	uses the '-' character in keywords
+		:setlocal iskeyword+=-
+		:syntax keyword xStatement when-not
+	
 
+// syntax for set color
+:syntax keyword {group} {keyword} ...
+	:syntax keyword xType int long char
+	:syntax keyword xStatement if then else endif
+
+
+	
+:highlight link xType Type
+:highlight link xStatement Statement
+	This tells Vim to highlight "xType" like "Type" and "xStatement" like "Statement".  See |group-name| for the standard names.
+
+// abbreviations
+	if  language allows for abbreviations.For example, "next" can be
+abbreviated to "n", "ne" or "nex".  You can define them by using this command:
+
+	:syntax keyword xStatement n[ext]
+
+This doesn't match "nextone", keywords always match whole words only.	
+
+
+// match
+	syntax match {matchname} {pattern}
+example
+	syntax match xIdentifier /\<\l\+\>/
+		This one matches any word consisting of only lowercase letters:
+	:syntax match xComment /#.*/
+		Inhe x language it is anything from # to the end of a line:	
+		
