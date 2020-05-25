@@ -8,11 +8,9 @@
 	$unixStart = strtotime($start);
 	$unixEnd = strtoime($end); */
 
-	
-	$time = strtotime("5:00:00");
 
-	
 
-	$date = date("H:i:s", $time);
-	echo $date;
+	$d2 = date('Y-m-d', 1582992001);
+	echo $d2;
+	
 ?>

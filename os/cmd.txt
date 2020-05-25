@@ -1,2 +1,4 @@
 pwd -P 显示当前工作目录的真实路径，非软链接路径
 redirect
+
+scp -r fund_test:/home/alachess/retail/server/logs/tmp
