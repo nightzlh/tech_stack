@@ -52,3 +52,11 @@ console.log(d6.getDate());
 
 let d7 = new Date(2020, -1, 1);
 console.log(d7);
+
+let d8 = new Date(2020, 6, 5);
+console.log(d8.getDate());
+console.log(d8.getDay());
+
+
+
+console.log(d)
