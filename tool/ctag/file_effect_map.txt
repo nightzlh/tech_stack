@@ -1,0 +1,9 @@
+−−language−force
+−−langmap 
+−−list−maps 
+
+Unless the −−language−force option is specified, the language of each source file is automatically selected based upon a mapping of file names to languages. The mappings in effect for each language may be display using the −−list−maps option and may be changed using the −−langmap option. On platforms which support it, if the name of a file is not mapped to a language and the file is executable, the first line of the file is checked to see if the file is a "#!" script for a recognized language.
+
+By default, all other files names are ignored. This permits running ctags on all files in either a single directory (e.g. "ctags *"), or on all files in an entire source directory tree (e.g. "ctags −R"), since only those files whose names are mapped to languages will be scanned.
+
+[The reason that .h extensions are mapped to C++ files rather than C files is because it is common to use .h extensions in C++, and no harm results in treating them as C++ files.]
