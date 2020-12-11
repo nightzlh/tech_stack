@@ -1,0 +1,55 @@
+ link editor ?
+
+charpter 1:	file struct
+
+object file:
+	relocatable file 
+		holds code and data suitable for linking with other object files to create an 
+	executable or a shared object file
+
+	executable file 
+		holds a program suitable for execution
+
+	shared object file 
+		holds code and data suitable for linking in two contexts. First, the link 
+	editor may process it with other relocatable and shared object files to create another object file. 
+	Second, the dynamic linker combines it with an executable file and other shared objects to 
+	create a process image.
+
+ELF header
+	describing the file's organization. Sections hold the bulk of object file information for the linking view: instructions, 
+data, symbol table, relocation information, and so on.
+
+program header table
+	if present, tells the system how to create a process image.
+
+section header table
+	 contains information describing the file's sections. 
+
+section 
+	has an entry in the table; each entry gives information such as the section name, 
+the section size, and so on. Files used during linking must have a section header table; other 
+object files may or may not have one. 
+
+
+
+chapter 2: 	data
+
+control data (with a machine-independent format)
+
+
+Sections
+	Elf32_Shdr
+
+
+special sections
+	.bss .comment .data .data1 .debug .dynamic .hash  .line .note .rodata .rodata1 .shstrtab .strtab .symtab .text  
+
+SymboleTable
+	locate and relocate a program's symbolic definitions and references.
+	locate
+	relocate
+	symbolic definitions
+	reference
+	
+

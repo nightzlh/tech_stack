@@ -1,0 +1,75 @@
+aixin@shoyoo.com/Shoyoo2019
+
+xc_retail 外网正式服管理员账号密码
+	zhongliheng
+	zhongliheng987shoyoo
+
+
+2019-07-29T08:08:05.207979Z 1 [Note] A temporary password is generated for root@localhost: /1ukqgLZ39v_
+
+2019-07-29T08:33:22.615960Z 1 [Note] A temporary password is generated for root@localhost: (iQP:NR0f9tr
+
+
+小6的 管理后台现已迁移完毕, 迁至 `新服务器`,  现等待下一次  Java 的服务维护后,  完成全部迁移!
+
+- Java 服务需要修改与 `Php 的通信地址`
+
+## 小六 服务器信息汇总
+### ECS 服务器
+
+外网地址	内网地址	系统	用户名	主机名	密码	备注
+47.110.248.190	172.16.11.216	Centos 7.3	alachess	iZbp1f9dx8ur1qbd6m0jlr	QLRN9c6Pz59AHhOx	运行 java 服务 的旧机器
+root		Y7LB80WFbLVWWicg	
+120.26.187.214	172.16.11.217	Centos 7.3	alachess	iZbp19b3o2pb5goj2y82e7Z	QLRN9c6Pz59AHhOx	运行 php 后台的 新机器
+root		Y7LB80WFbLVWWicg	
+### RDS 数据库
+
+内网地址	用户	密码	数据库	版本	配置
+rm-bp113a16oqeojyq2d.mysql.rds.aliyuncs.com	retail	eyzwzvw0xeumvgoY	xc_retail	MySQL 5.6	1 核 1G
+### Redis 数据库
+
+内网地址	密码
+r-bp19b5c119291824.redis.rds.aliyuncs.com	3QvoBsqFa1bCG6nH
+
+
+小6服务器列表清单
+添加只读实例
+地址：rr-bp16crs3x5tl580pp.mysql.rds.aliyuncs.com
+用户名：retailread
+密码：eyzwzvw0xeumvgoY
+
+
+
+sxtest
+sx32595194
+
+
+gp_repo
+123456
+
+
+TANSHUWEI
+LYFXQ4XN
+
+
+sunjing
+jmw2123
+
+ 禅道
+zhongliheng
+ig2play201
+
+RENZHENGGUO
+120814
+
+登陆地址: https://signin.aliyun.com/1811877379275159/login.htm
+用户登录名称: zhongliheng@1811877379275159.onaliyun.com 
+登录密码: uMqM@teBZBuHrFDs|m4s1rrZLuU|7%N9
+
+
+老的召回范围是注册在5月前，且5.1-8.1间没有下过单
+新的召回范围是注册在7月前，且7.1-10.23间没有下过单
+符合这2次召回条件的登录时系统都会发放券
+
+zhongliheng
+&f@nYniY%YKNKun1
