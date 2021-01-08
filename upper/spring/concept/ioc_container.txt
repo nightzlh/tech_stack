@@ -1,0 +1,16 @@
+configuration metadata 
+	 tell the Spring container to instantiate, configure, and assemble the objects in your application.
+
+annotation-based configuration
+
+java-based configuration
+
+container manage bean
+
+	The container then injects those dependencies when it creates the bean
+	
+BeanFactory interface
+	provides an advanced configuration mechanism capable of managing any type of object
+ ApplicationContext interface
+	is a sub-interface of BeanFactory.The ApplicationContext is a complete superset of the BeanFactory
+	

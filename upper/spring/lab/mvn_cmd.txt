@@ -1,0 +1,5 @@
+package
+	./mvnw clean package
+run
+	java -jar target/rest-service-0.0.1-SNAPSHOT.jar
+
