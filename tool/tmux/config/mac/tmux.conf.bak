@@ -1,0 +1,42 @@
+unbind z
+unbind %
+unbind '"'
+unbind C-Left
+unbind C-Right
+unbind C-Down
+unbind C-Up
+unbind Left
+unbind Right
+unbind Down
+unbind Up
+unbind r
+unbind R
+unbind '-'
+
+bind-key - split-window -v
+bind-key \ split-window -h
+
+bind-key -r h select-pane -L
+bind-key -r j select-pane -D
+bind-key -r k select-pane -U
+bind-key -r l select-pane -R
+
+bind-key -nr C-h resize-pane -L
+bind-key -nr C-j resize-pane -D
+bind-key -nr C-k resize-pane -U
+bind-key -nr C-l resize-pane -R
+
+bind-key -n -r ˙ resize-pane -L 5
+bind-key -n -r ∆ resize-pane -D 5
+bind-key -n -r ˚ resize-pane -U 5
+bind-key -n -r ¬ resize-pane -R 5
+bind-key z resize-pane -Z
+
+#bind-key -n – split-window -v
+#bind-key -n « split-window -h
+#bind-key -n C-z resize-pane -Z
+#bind-key -n ≤ select-window -p
+#bind-key -n ≥ select-window -n 
+#bind-key -n C-, select-window -p fail
+#bind-key -n C-. select-window -n fail
+
