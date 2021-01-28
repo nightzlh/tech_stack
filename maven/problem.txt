@@ -3,6 +3,34 @@ unsolved:
 solved:
 	Q:maven 执行过程输出细节
 	A:命令加上 -X 选项
-	Q:maven创建项目没有速度
+
+	Q:maven构建过程没有速度
 	A:科学上网
 
+	Q:Maven 编译出的jar中没有主清单属性
+	A:添加节点
+    <build>
+        <finalName>App</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>App</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
