@@ -1,0 +1,8 @@
+unsolved:
+	
+solved:
+	Q:maven 执行过程输出细节
+	A:命令加上 -X 选项
+	Q:maven创建项目没有速度
+	A:科学上网
+

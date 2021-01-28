@@ -7,7 +7,7 @@ Super POM
 
 Minimal POM
 	The minimum requirement for a POM are the following:
-		project root
+		project as root config node
 		modelVersion - should be set to 4.0.0
 		groupId - the id of the project's group.
 		artifactId - the id of the artifact (project)
