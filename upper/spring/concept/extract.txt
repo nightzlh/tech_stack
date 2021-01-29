@@ -1,0 +1,34 @@
+Spring的核心就是IOC容器，但是我们不能简单的说他就是一个容器。我们需要知道如何配置使用这个容器，Spring的其他技术，都是在这个容器的基础之上实现的。
+
+其次，就是AOP，面向切面编程，概念、配置和实现原理等等，还有就是Spring的事务管理。Spring事务管理其实就是面向切面编程的实现。
+
+IOC和AOP是Spring的核心思想基础，只有了解了它们，我们才能基于Spring，让我们的工作变得更加简单。个人认为，想要学好Spring，首先要搞懂以下几个问题：
+
+Spring是什么？
+你只需要知道，Spring是基于面向对象编程思想的Java开发框架
+
+Spring能干什么？
+Spring可以根据配置文件创建以及组装对象之间的依赖关系；
+
+Spring面向切面编程可以帮我们解决日志记录、性能统计和安全控制等
+
+Spring可以非常简单的帮我们解决和管理数据库事务问题
+
+Spring还提供了与第三方框架的无缝集成，例如：hibernate、JPA等
+
+Spring的JDBC使得我们访问数据库变得非常容易
+
+Spring提供与Struts、JSF等框架的集成支持，而且Spring MVC也非常好用
+
+Spring还可以与其他第三方框架整合
+
+Spring在JavaEE的三层架构，每一层均提供了不同的解决技术。如下：
+
+表现层（Web层）：Spring MVC
+
+业务逻辑层（Service层）：Spring的IoC
+
+数据访问层（DAO层）：Spring的jdbcTemplate
+
+Spring是什么样的架构？
+Sping官网给出的Spring 架构图

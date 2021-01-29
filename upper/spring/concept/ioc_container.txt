@@ -6,11 +6,42 @@ annotation-based configuration
 java-based configuration
 
 container manage bean
-
 	The container then injects those dependencies when it creates the bean
 	
 BeanFactory interface
 	provides an advanced configuration mechanism capable of managing any type of object
- ApplicationContext interface
-	is a sub-interface of BeanFactory.The ApplicationContext is a complete superset of the BeanFactory
+
+ApplicationContext interface
+	concpet: is a sub-interface of BeanFactory.The ApplicationContext is a complete superset of the BeanFactory
+	function:  
+	note: permit the registration of existing objects that are created outside the container (by users).
+
+Naming Beans
+	concept: Every bean has one or more identifiers.A bean usually has only one identifier. However, if it requires more than one, the extra ones can be considered aliases.
+	bean identifier: In XML-based configuration metadata, you use the id attribute, the name attribute, or both to specify the bean identifiers.The id attribute lets you specify exactly one id.
+
+	Aliasing a Bean: unread
 	
+been definition  第二列是官方文档的目录,第一列的属性在第二列的目录中有介绍
+	Class Instantiating Beans 
+	Name Naming Beans
+	Scope Bean Scopes
+	Constructor arguments Dependency Injection
+	Properties Dependency Injection
+	Autowiring mode Autowiring Collaborators
+	Lazy initialization mode Lazy-initialized Beans
+	Initialization method Initialization Callbacks
+	Destruction method Destruction Callbacks
+
+
+
+bean property
+	depends-on
+		sometimes dependencies between beans are less direct.The depends-on attribute can explicitly force one or more beans to be initialized before the bean (using this element) is initialized. 
+	The depends-on attribute can specify both an initialization-time dependency and, in the case of singleton beans only, a corresponding destruction-time dependency. Dependent beans that define a depends-on relationship with a given bean are destroyed first, prior to the given bean itself being destroyed. Thus, depends-on can also control shutdown order.
+
+autowiring
+	concept: The Spring container can autowire relationships between collaborating beans. You can let Spring resolve collaborators (other beans) automatically for your bean by inspecting the contents of the ApplicationContext.
+
+	Autowiring modes no, byName, byType, constructor 
+
