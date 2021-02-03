@@ -15,3 +15,36 @@ base concept
 	AOP proxy: An object created by the AOP framework in order to implement the aspect contracts (advise method executions and so on). In the Spring Framework, an AOP proxy is a JDK dynamic proxy or a CGLIB proxy.
 
 	Weaving: linking aspects with other application types or objects to create an advised object. This can be done at compile time (using the AspectJ compiler, for example), load time, or at runtime. Spring AOP, like other pure Java AOP frameworks, performs weaving at runtime.
+
+	Advisors: The concept of “advisors” comes from the AOP support defined in Spring and does not have a direct equivalent in AspectJ. An advisor is like a small self-contained aspect that has a single piece of advice. 
+
+Declaring an Aspect
+	example 1: declare in xml	
+	<bean id="myAspect" class="org.xyz.NotVeryUsefulAspect">
+	    <!-- configure properties of the aspect here -->
+	</bean	
+	example 2: declare with annotation
+	package org.xyz;
+	import org.aspectj.lang.annotation.Aspect;
+
+	@Aspect
+	public class NotVeryUsefulAspect {
+
+	}
+
+Delaring a Pointcut
+	Pointcuts determine join points of interest and thus enable us to control when advice runs.	
+	two parts
+		a signature comprising a name and any parameters 
+		a pointcut expression that determines exactly which method executions we are interested in.
+	
+	example	
+	@Pointcut("execution(* transfer(..))") // the pointcut expression
+	private void anyOldTransfer() {} // the pointcut signature
+
+Introductions
+	Introductions (known as inter-type declarations in AspectJ) let an aspect declare that advised objects implement a given interface and provide an implementation of that interface on behalf of those objects.
+
+
+
+
