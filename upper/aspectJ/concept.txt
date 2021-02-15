@@ -1,0 +1,48 @@
+AspectJ adds to Java just one new concept
+	a join point that's really just a name for an existing Java concept. I
+AspectJ  adds to Java only a few new constructs: pointcuts, advice, inter-type declarations and aspects.
+	Pointcuts and advice dynamically affect program flow, 
+	inter-type declarations statically affects a program's class hierarchy. The aspect declares the methods and fields that are necessary to implement the new capability, and associates the methods and fields to the existing classes.
+	and aspects encapsulate these new constructs.
+
+
+	
+
+
+切点匹配语法
+
+MethodPattern = 
+  [ModifiersPattern] TypePattern 
+        [TypePattern . ] IdPattern (TypePattern | ".." , ... ) 
+        [ throws ThrowsPattern ]
+ConstructorPattern = 
+  [ModifiersPattern ] 
+        [TypePattern . ] new (TypePattern | ".." , ...) 
+        [ throws ThrowsPattern ]
+FieldPattern = 
+  [ModifiersPattern] TypePattern [TypePattern . ] IdPattern
+ThrowsPattern = 
+  [ ! ] TypePattern , ...
+TypePattern = 
+    IdPattern [ + ] [ [] ... ]
+    | ! TypePattern
+    | TypePattern && TypePattern
+    | TypePattern || TypePattern
+    | ( TypePattern )  
+IdPattern =
+  Sequence of characters, possibly with special * and .. wildcards
+ModifiersPattern =
+  [ ! ] JavaModifier  ...
+
+MethodPattern代表的是方法匹配模式
+ConstructorPattern代表的是构造器匹配模式
+FieldPattern代表的是域匹配模式
+ThrowsPattern代表的是throws语句匹配模式
+TypePattern代表的是类型匹配模式
+IdPattern代表的是一个具体的字符序列或者带有特定通配符的表达式
+ModifiersPattern代表的是任意java中的修饰符
+[]代表的是可选的
+*代表0至任意字符
+..发在方法参数中代表任意数量的参数，放在包名后代表当前包及其子包
++放在类名后代表当前类及其子类，放在接口后代表当前接口及其实现类
+
