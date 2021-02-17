@@ -1,0 +1,2 @@
+cetnos8
+	start mysql: systemctl start mysqld
