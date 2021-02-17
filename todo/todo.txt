@@ -1,0 +1,7 @@
+use mybatis
+
+use rocketmq
+
+
+
+centos8 配置
