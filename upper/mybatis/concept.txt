@@ -1,0 +1,114 @@
+class SqlSessionFactoryBuilder
+	SqlSessionFactoryBuilder can build a SqlSessionFactory instance from an XML configuration file, or from a custom prepared instance of the Configuration class.
+
+calss SqlSessionFactory
+	 SqlSessionFactory, as the name suggests, you can acquire an instance of SqlSession
+SqlSession
+	absolutely every method needed to execute SQL commands against the database. 
+
+Scope and Lifecycle
+	It's very important to understand the various scopes and lifecycles classes we've discussed so far. Using them incorrectly can cause severe concurrency problems.
+
+objectFactory
+Each time MyBatis creates a new instance of a result object, it uses an ObjectFactory instance to do so. If you want to override the default behaviour of the ObjectFactory, you can create your own. 
+
+// ExampleObjectFactory.java
+public class ExampleObjectFactory extends DefaultObjectFactory {
+  @Override
+  public <T> T create(Class<T> type) {
+    return super.create(type);
+  }
+
+  @Override
+  public <T> T create(Class<T> type, List<Class<?>> constructorArgTypes, List<Object> constructorArgs) {
+    return super.create(type, constructorArgTypes, constructorArgs);
+  }
+
+  @Override
+  public void setProperties(Properties properties) {
+    super.setProperties(properties);
+  }
+
+  @Override
+  public <T> boolean isCollection(Class<T> type) {
+    return Collection.class.isAssignableFrom(type);
+  }}
+<!-- mybatis-config.xml -->
+<objectFactory type="org.mybatis.example.ExampleObjectFactory">
+  <property name="someProperty" value="100"/>
+</objectFactory>
+
+Properties defined within the body of the objectFactory element will be passed to the setProperties method after initialization of your ObjectFactory instance.
+
+
+plugins
+MyBatis allows you to intercept calls to at certain points within the execution of a mapped statement. 
+Executor (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)
+ParameterHandler (getParameterObject, setParameters)
+ResultSetHandler (handleResultSets, handleOutputParameters)
+StatementHandler (prepare, parameterize, batch, update, query)
+
+you attempt to modify or override the behaviour of a given method, you’re likely to break the core of MyBatis. These are low level classes and methods, so use plug-ins with caution.
+
+
+environments
+
+MyBatis can be configured with multiple environments. This helps you to apply your SQL Maps to multiple databases for any number of reasons.
+While you can configure multiple environments, you can only choose ONE per SqlSessionFactory instance.
+<environments default="development">
+  <environment id="development">
+    <transactionManager type="JDBC">
+      <property name="..." value="..."/>
+    </transactionManager>
+    <dataSource type="POOLED">
+      <property name="driver" value="${driver}"/>
+      <property name="url" value="${url}"/>
+      <property name="username" value="${username}"/>
+      <property name="password" value="${password}"/>
+    </dataSource>
+  </environment>
+</environments>
+
+
+databaseIdProvider
+MyBatis will load all statements with no databaseId attribute or with a databaseId that matches the current one.Go
+
+
+<databaseIdProvider type="DB_VENDOR">
+  <property name="SQL Server" value="sqlserver"/>
+  <property name="DB2" value="db2"/>
+  <property name="Oracle" value="oracle" />
+</databaseIdProvider>
+
+
+mappers
+
+tell MyBatis where to find SQL statements.
+
+<!-- Using classpath relative resources -->
+<mappers>
+  <mapper resource="org/mybatis/builder/AuthorMapper.xml"/>
+  <mapper resource="org/mybatis/builder/BlogMapper.xml"/>
+  <mapper resource="org/mybatis/builder/PostMapper.xml"/>
+</mappers>
+
+<!-- Using url fully qualified paths -->
+<mappers>
+  <mapper url="file:///var/mappers/AuthorMapper.xml"/>
+  <mapper url="file:///var/mappers/BlogMapper.xml"/>
+  <mapper url="file:///var/mappers/PostMapper.xml"/>
+</mappers>
+
+<!-- Using mapper interface classes -->
+<mappers>
+  <mapper class="org.mybatis.builder.AuthorMapper"/>
+  <mapper class="org.mybatis.builder.BlogMapper"/>
+  <mapper class="org.mybatis.builder.PostMapper"/>
+</mappers>
+
+<!-- Register all interfaces in a package as mappers -->
+<mappers>
+  <package name="org.mybatis.builder"/>
+</mappers>
+
+
