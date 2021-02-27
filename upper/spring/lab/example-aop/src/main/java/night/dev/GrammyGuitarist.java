@@ -2,7 +2,9 @@ package night.dev;
 
 import night.dev.common.Singer;
 import night.dev.common.Guitar;
+import org.springframework.stereotype.Component;
 
+@Component("johnMayer")
 public class GrammyGuitarist implements Singer {
     @Override public void sing() {
         System.out.println("sing: Gravity is working against me\n" +

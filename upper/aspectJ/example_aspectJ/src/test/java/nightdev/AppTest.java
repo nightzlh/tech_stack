@@ -1,6 +1,6 @@
-package night.dev;
+package nightdev;
 
-import org.testng.annotations.Test;
+import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
@@ -25,7 +25,7 @@ public class AppTest
      */
     public static Test suite()
     {
-        return (Test) new TestSuite( AppTest.class );
+        return new TestSuite( AppTest.class );
     }
 
     /**

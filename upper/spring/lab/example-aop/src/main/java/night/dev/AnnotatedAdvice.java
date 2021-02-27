@@ -13,8 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class AnnotatedAdvice {
-    /* @Pointcut("execution(*com.apress.prospring5.ch5..sing*(com.apress.prospring5.ch2.common.Guitar))
-        && args(value)")
+    @Pointcut("execution(* night.dev.GrammyGuitarist.sing*(night.dev.common.Guitar)) && args(value)")
     public void singExecution(Guitar value) {
     }
 
@@ -26,7 +25,6 @@ public class AnnotatedAdvice {
     public void simpleBeforeAdvice(JoinPoint joinPoint, Guitar value) {
         if(value.getBrand().equals("Gibson")) {
             System.out.println("Executing: " +
-                            285Chapter 5 ■ Introducing Spring AOP
                     joinPoint.getSignature().getDeclaringTypeName() + " "
                             + joinPoint.getSignature().getName() + " argument: " + value.getBrand());
         }
@@ -44,5 +42,5 @@ public class AnnotatedAdvice {
                 + pjp.getSignature().getName()
                 + " argument: " + value.getBrand());
         return retVal;
-    } */
+    }
 }
