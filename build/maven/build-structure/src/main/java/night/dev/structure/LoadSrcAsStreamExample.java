@@ -43,7 +43,11 @@ public class LoadSrcAsStreamExample {
         this.loadByClass("cur_path_mybatis.xml");
         this.loadByClass("/night/dev/structure/cur_path_mybatis.xml");
 
+        this.loadByClass("resource_in_src.xml");
+        this.loadByClass("/night/dev/structure/resource_in_src.xml");
+
         this.loadByClassLoader("night/dev/structure/cur_path_mybatis.xml");
+        this.loadByClassLoader("night/dev/structure/resource_in_src.xml");
     }
 }
 

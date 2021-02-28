@@ -1,37 +1,42 @@
 package night.dev;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
 public class MybatisExample {
-    private SqlSessionFactory sessionFactory;
+    private SqlSessionFactory sqlSessionFactory;
 
     private void init() {
         try {
-            String resource = "night/dev/mapper/mybatis.xml";
+            String resource = "mybatis.xml";
             InputStream inputStream = Resources.getResourceAsStream(resource);
-            //this.sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+            this.sqlSessionFactory =
+                    new SqlSessionFactoryBuilder().build(inputStream);
         }
         catch (Exception ex){
             // handle any errors
             System.out.println("exception: " + ex.getMessage());
         }
+    }
 
+    public void runSql() {
         try {
-            File file = new File("night/dev/mapper/mybatis.xml");
-            InputStream in = new FileInputStream(file);
-
-        }catch (Exception ex) {
-            // handle any errors
+            SqlSession session = this.sqlSessionFactory.openSession();
+            User blog = session.selectOne(
+                    "night.dev.UserMapper.selectUser", 1);
+        } catch (Exception ex) {
             System.out.println("exception: " + ex.getMessage());
         }
     }
 
     public void run() {
         this.init();
+        this.runSql();
     }
 }
