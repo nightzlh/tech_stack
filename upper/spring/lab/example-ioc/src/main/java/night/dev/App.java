@@ -12,5 +12,7 @@ public class App
 
         Example2 e2 = new Example2();
         e2.run();
+
+        e2.printAutoConfiguration();
     }
 }
