@@ -5,6 +5,12 @@ annotation-based configuration
 
 java-based configuration
 
+	The central artifacts in Spring’s new Java-configuration support are @Configuration-annotated classes and @Bean-annotated methods.
+
+	The @Bean annotation is used to indicate that a method instantiates, configures, and initializes a new object to be managed by the Spring IoC container. For those familiar with Spring’s <beans/> XML configuration, the @Bean annotation plays the same role as the <bean/> element. You can use @Bean-annotated methods with any Spring @Component. However, they are most often used with @Configuration beans.
+	
+	Annotating a class with @Configuration indicates that its primary purpose is as a source of bean definitions. Furthermore, @Configuration classes let inter-bean dependencies be defined by calling other @Bean methods in the same class.
+
 container manage bean
 	The container then injects those dependencies when it creates the bean
 	

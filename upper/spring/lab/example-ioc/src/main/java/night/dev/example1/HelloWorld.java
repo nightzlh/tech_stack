@@ -1,4 +1,4 @@
-package night.dev;
+package night.dev.example1;
 
 public class HelloWorld {
     private String message;

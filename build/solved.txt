@@ -1,0 +1,2 @@
+读取/Users/XXX/.m2/repository/org/eclipse/jetty/jetty-io/9.4.27.v20200227/jetty-io-9.4.27.v20200227.jar时出错; zip file is empty
+根据错误提示，进入对应的仓库地址，我这里就是进/Users/XXX/.m2/repository/org/eclipse 目录下，将对应的包删除，再重新执行 mvn clean package -e -U 即可

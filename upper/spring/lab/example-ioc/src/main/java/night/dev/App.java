@@ -1,19 +1,16 @@
 package night.dev;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
+import night.dev.example1.Example1;
+import night.dev.example2.Example2;
 
 public class App 
 {
     public static void main( String[] args )
     {
-        // ApplicationContext context = new ClassPathXmlApplicationContext("file:/Users/zlh/github/tech_stack/upper/spring/lab/example-ioc/Beans.xml");
-        ApplicationContext context = new FileSystemXmlApplicationContext("Beans.xml");
-        HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
-        objA.setMessage("I'm object A");
-        objA.getMessage();
-        HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
-        objB.getMessage();
+        Example1 e1 = new Example1();
+        e1.run();
+
+        Example2 e2 = new Example2();
+        e2.run();
     }
 }
