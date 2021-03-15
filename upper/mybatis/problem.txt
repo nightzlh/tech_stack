@@ -1,0 +1,15 @@
+<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  <property name="mapperInterface" value="org.mybatis.spring.sample.mapper.UserMapper" />
+  <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>
+
+@Configuration
+public class MyBatisConfig {
+  @Bean
+  public MapperFactoryBean<UserMapper> userMapper() throws Exception {
+    MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<>(UserMapper.class);
+    factoryBean.setSqlSessionFactory(sqlSessionFactory());
+    return factoryBean;
+  }
+}
+为什么以上两个配置等同
