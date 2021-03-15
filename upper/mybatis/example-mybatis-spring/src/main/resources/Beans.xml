@@ -4,8 +4,35 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
+    <bean id="sqlSessionLocator" class="night.dev.example2.SqlSessionLocator">
+        <constructor-arg ref="dataSource" />
     </bean>
 
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy">
+        <constructor-arg ref="mysqlDataSource" />
+    </bean>
+
+    <bean id="mysqlDataSource" class="com.mysql.cj.jdbc.MysqlDataSource">
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/lab_mybatis"/>
+        <property name="port" value="3306"/>
+        <property name="user" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath*:mybatis/mybatis.xml" />
+        <property name="databaseIdProvider" ref="databaseIdProvider"/>
+    </bean>
+
+    <bean id="databaseIdProvider" class="org.apache.ibatis.mapping.VendorDatabaseIdProvider">
+        <property name="properties">
+            <props>
+                <prop key="SQL Server">sqlserver</prop>
+                <prop key="DB2">db2</prop>
+                <prop key="Oracle">oracle</prop>
+                <prop key="MySQL">mysql</prop>
+            </props>
+        </property>
+    </bean>
 </beans>
