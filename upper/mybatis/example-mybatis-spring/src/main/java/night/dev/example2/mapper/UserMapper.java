@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Select;
 import org.mybatis.spring.mapper.MapperFactoryBean;
 
 public interface UserMapper {
-    @Select("SELECT * FROM users WHERE id = #{userId}")
-    User selectUser(@Param("userId") String userId);
+    @Select("SELECT * FROM t_users WHERE id = #{userId}")
+    User selectUser(@Param("userId") int userId);
 }

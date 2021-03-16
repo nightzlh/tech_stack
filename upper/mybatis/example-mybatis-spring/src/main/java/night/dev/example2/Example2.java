@@ -1,5 +1,6 @@
 package night.dev.example2;
 
+import night.dev.User.User;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -24,7 +25,7 @@ public class Example2 {
 
         SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(factory);
         UserMapper mapper = sqlSessionTemplate.getMapper(UserMapper.class);
-        
+        User user = mapper.selectUser(1);
         System.out.println("dsfdfd");
     }
 }
