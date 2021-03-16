@@ -1,0 +1,3 @@
+git proxy connect aborted
+	在git目录下的.git/config文件中,删除 proxy配置
+

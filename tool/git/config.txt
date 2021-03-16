@@ -1,0 +1,3 @@
+config path
+	~/.gitconfig
+	git仓库目录下.git目录
