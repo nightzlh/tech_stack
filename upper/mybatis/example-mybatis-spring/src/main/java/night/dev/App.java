@@ -7,6 +7,7 @@ import night.dev.example2.Example2;
  * Hello world!
  *
  */
+
 public class App 
 {
     public static void main( String[] args ) {

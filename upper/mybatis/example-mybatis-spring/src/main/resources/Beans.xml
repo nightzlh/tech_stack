@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
+    <!-- mybatis:scan base-package="night.dev.example2.mapper" / -->
 
     <bean id="sqlSessionLocator" class="night.dev.example2.SqlSessionLocator">
         <constructor-arg ref="dataSource" />
@@ -34,5 +38,8 @@
                 <prop key="MySQL">mysql</prop>
             </props>
         </property>
+    </bean>
+
+    <bean id="userService" class="night.dev.example2.UserService">
     </bean>
 </beans>
