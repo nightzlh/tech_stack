@@ -54,7 +54,14 @@
       <artifactId>spring-jdbc</artifactId>
       <version>5.3.4</version>
     </dependency>
-    
+
+    <dependency>
+      <groupId>org.mybatis.generator</groupId>
+      <artifactId>mybatis-generator-core</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+
+
   </dependencies>
 
   <properties>

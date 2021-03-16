@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import night.dev.example2.mapper.UserMapper;
+import com.mysql.cj.jdbc.Driver;
 
 public class Example2 {
     private ApplicationContext context;
