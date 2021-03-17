@@ -5,10 +5,10 @@
 	<classPathEntry location="./lib/mysql-connector-java-8.0.22.jar" />
 	<context id="simple" targetRuntime="MyBatis3Simple"> 
 		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-	              connectionURL="dbc:mysql://127.0.0.1:3306/lab_mybatis?user=root&amp;password=nightDev@163" />
+	              connectionURL="jdbc:mysql://127.0.0.1:3306/lab_mybatis?user=root&amp;password=123456" />
 		<javaModelGenerator targetPackage="example.model" targetProject="src/main/java"/>
 		<sqlMapGenerator targetPackage="example.mapper" targetProject="src/main/resources"/>
 		<javaClientGenerator type="XMLMAPPER" targetPackage="example.mapper" targetProject="src/main/java"/>
-		<table tableName="FooTable" /> 
+		<table tableName="t_users" />
 	</context> 
 </generatorConfiguration>
