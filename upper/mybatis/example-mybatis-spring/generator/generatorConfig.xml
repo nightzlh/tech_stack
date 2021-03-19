@@ -9,6 +9,7 @@
 		<javaModelGenerator targetPackage="example.model" targetProject="src/main/java"/>
 		<sqlMapGenerator targetPackage="example.mapper" targetProject="src/main/resources"/>
 		<javaClientGenerator type="XMLMAPPER" targetPackage="example.mapper" targetProject="src/main/java"/>
-		<table tableName="t_users" />
+		<table tableName="t_users" domainObjectName="Users" >
+		</table>
 	</context> 
 </generatorConfiguration>
