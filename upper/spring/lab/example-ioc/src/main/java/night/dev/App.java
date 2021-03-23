@@ -2,6 +2,7 @@ package night.dev;
 
 import night.dev.example1.Example1;
 import night.dev.example2.Example2;
+import night.dev.example3.Example3;
 
 public class App 
 {
@@ -14,5 +15,8 @@ public class App
         e2.run();
 
         e2.printAutoConfiguration();
+        
+        Example3 e3 = new Example3();
+        e3.run();
     }
 }
