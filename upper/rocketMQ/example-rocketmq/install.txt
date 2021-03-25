@@ -1,19 +1,49 @@
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 06:00 min
-[INFO] Finished at: 2021-03-25T07:11:09+08:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project rocketmq-remoting: There are test failures.
-[ERROR] 
-[ERROR] Please refer to /home/nightdev/Downloads/rocketmq-all-4.8.0-source-release/remoting/target/surefire-reports for the individual test results.
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-[ERROR] 
-[ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn <goals> -rf :rocketmq-remoting
+-------------------------------------------------------------------------------
+Test set: org.apache.rocketmq.remoting.TlsTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 1, Time elapsed: 0.782 sec <<< FAILURE! - in org.apache.rocketmq.remoting.TlsTest
+serverAcceptsUntrustedClientCert(org.apache.rocketmq.remoting.TlsTest)  Time elapsed: 0.62 sec  <<< ERROR!
+org.apache.rocketmq.remoting.exception.RemotingSendRequestException: send request to <ocalhost/127.0.0.1:8888> failed
+        at org.apache.rocketmq.remoting.TlsTest.requestThenAssertResponse(TlsTest.java:320)
+        at org.apache.rocketmq.remoting.TlsTest.requestThenAssertResponse(TlsTest.java:316)
+        at org.apache.rocketmq.remoting.TlsTest.serverAcceptsUntrustedClientCert(TlsTest.java:222)
+Caused by: javax.net.ssl.SSLHandshakeException: PKIX path validation failed: java.security.cert.CertPathValidatorException: Algorithm constraints check failed on keysize limits. RSA 1024bit key used with certificate: EMAILADDRESS=yukon@apache.org, CN=apache rocketmq, OU=rocketmq, O=apache, L=Hangzhou, ST=Zhejiang, C=CN.  Usage was tls server
+Caused by: sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: Algorithm constraints check failed on keysize limits. RSA 1024bit key used with certificate: EMAILADDRESS=yukon@apache.org, CN=apache rocketmq, OU=rocketmq, O=apache, L=Hangzhou, ST=Zhejiang, C=CN.  Usage was tls server
+Caused by: java.security.cert.CertPathValidatorException: Algorithm constraints check failed on keysize limits. RSA 1024bit key used with certificate: EMAILADDRESS=yukon@apache.org, CN=apache rocketmq, OU=rocketmq, O=apache, L=Hangzhou, ST=Zhejiang, C=CN.  Usage was tls server
+Caused by: java.security.cert.CertPathValidatorException: Algorithm constraints check failed on keysize limits. RSA 1024bit key used with certificate: EMAILADDRESS=yukon@apache.org, CN=apache rocketmq, OU=rocketmq, O=apache, L=Hangzhou, ST=Zhejiang, C=CN.  Usage was tls server
 
+
+
+----------------------------------------------------------------------------------
+
+--org.apache.rocketmq.remoting.netty.NettyRemotingClientTest.txt-----------------------------------------------------------------------------
+Test set: org.apache.rocketmq.remoting.netty.NettyRemotingClientTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in org.apache.rocketmq.remoting.netty.NettyRemotingClientTest
+org.apache.rocketmq.remoting.netty.NettyRemotingClientTest  Time elapsed: 0.005 sec  <<< ERROR!
+org.mockito.exceptions.misusing.RedundantListenerException:
+
+Problems adding Mockito listener.
+Listener of type 'MismatchReportingTestListener' has already been added and not removed.
+It indicates that previous listener was not removed according to the API.
+When you add a listener, don't forget to remove the listener afterwards:
+  Mockito.framework().removeListener(myListener);
+For more information, see the javadoc for RedundantListenerException class.
+
+
+----------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Test set: org.apache.rocketmq.remoting.netty.NettyRemotingAbstractTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in org.apache.rocketmq.remoting.netty.NettyRemotingAbstractTest
+org.apache.rocketmq.remoting.netty.NettyRemotingAbstractTest  Time elapsed: 0 sec  <<< ERROR!
+org.mockito.exceptions.misusing.RedundantListenerException:
+
+Problems adding Mockito listener.
+Listener of type 'MismatchReportingTestListener' has already been added and not removed.
+It indicates that previous listener was not removed according to the API.
+When you add a listener, don't forget to remove the listener afterwards:
+  Mockito.framework().removeListener(myListener);
+For more information, see the javadoc for RedundantListenerException class.
