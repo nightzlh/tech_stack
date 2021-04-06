@@ -1,0 +1,33 @@
+NettyRemotingAbstract NettyRemotingClient
+
+Bootstrap bstractBootstrap<B extends AbstractBootstrap<B, C>, C extends Channel>
+
+NioServerSocketChannel AbstractNioMessageChannel AbstractNioChannel AbstractChannel DefaultChannelPipeline
+
+
+AbstractBootstrap
+	public B channel(Class<? extends C> channelClass)
+
+
+DefaultChannelPipeline
+	public final ChannelFuture writeAndFlush(Object msg)
+
+
+AbstractChannelHandlerContext
+	public ChannelFuture writeAndFlush(Object msg) {
+      		return this.writeAndFlush(msg, this.newPromise());
+    	}
+	public ChannelFuture writeAndFlush(Object msg, ChannelPromise promise) {
+        	if (msg == null) {
+	            throw new NullPointerException("msg");
+        	} else if (!this.validatePromise(promise, true)) {
+	            ReferenceCountUtil.release(msg);
+	            return promise;
+	        } else {
+        	    this.write(msg, true, promise);
+	            return promise;
+	        }
+	    }
+
+
+
