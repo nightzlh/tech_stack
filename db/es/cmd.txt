@@ -1,0 +1,1 @@
+.//usr/local/Cellar/kibana-full/7.12.0/libexec/node_modules/@elastic/elasticsearch

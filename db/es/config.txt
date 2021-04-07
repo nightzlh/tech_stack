@@ -1,0 +1,60 @@
+Warning: Tried to install empty array to /usr/local/etc/elasticsearch/jvm.options.d
+==> codesign -f -s - /usr/local/Cellar/elasticsearch-full/7.12.0/libexec/modules/x-pack-ml/platform/darwin-x86_64/controller.app --deep
+==> find /usr/local/Cellar/elasticsearch-full/7.12.0/libexec/jdk.app/Contents/Home/bin -type f -exec codesign -f -s - {} ;
+==> Caveats
+Data:    /usr/local/var/lib/elasticsearch/elasticsearch_zlh/
+Logs:    /usr/local/var/log/elasticsearch/elasticsearch_zlh.log
+Plugins: /usr/local/var/elasticsearch/plugins/
+Config:  /usr/local/etc/elasticsearch/
+
+To have launchd start elastic/tap/elasticsearch-full now and restart at login:
+  brew services start elastic/tap/elasticsearch-full
+Or, if you don't want/need a background service you can just run:
+  elasticsearch
+==> Summary
+🍺  /usr/local/Cellar/elasticsearch-full/7.12.0: 957 files, 493.3MB, built in 1 minute 22 seconds
+
+-----------------------------------------------------------
+
+
+elasticsearch.yml for configuring Elasticsearch
+jvm.options for configuring Elasticsearch JVM settings
+log4j2.properties for configuring Elasticsearch logging
+
+
+home 
+Elasticsearch home directory or $ES_HOME 
+/usr/local/var/homebrew/linked/elasticsearch-full
+
+bin
+Binary scripts including elasticsearch to start a node and elasticsearch-plugin to install plugins
+/usr/local/var/homebrew/linked/elasticsearch-full/bin
+
+
+conf
+Configuration files including elasticsearch.yml
+/usr/local/etc/elasticsearch
+ES_PATH_CONF
+
+data
+The location of the data files of each index / shard allocated on the node. Can hold multiple locations.
+/usr/local/var/lib/elasticsearch
+path.data
+
+logs
+Log files location.
+/usr/local/var/log/elasticsearch
+path.logs
+
+plugins
+Plugin files location. Each plugin will be contained in a subdirectory.
+/usr/local/var/homebrew/linked/elasticsearch/plugins
+
+
+
+shards
+	Elasticsearch provides the ability to subdivide your index into multiple pieces called shards. When you create an index, you can simply define the number of shards that you want. Each shard is in itself a fully-functional and independent "index" that can be hosted on any node in the cluster.
+
+replicas
+	 it is very useful and highly recommended to have a failover mechanism in case a shard/node somehow goes offline or disappears for whatever reason. To this end, Elasticsearch allows you to make one or more copies of your index’s shards into what are called replica shards, or replicas for short.
+

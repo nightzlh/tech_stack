@@ -1,0 +1,12 @@
+By default, Elasticsearch indexes all data in every field and each indexed field has a dedicated, optimized data structure. 
+
+Elasticsearch also has the ability to be schema-less, which means that documents can be indexed without explicitly specifying how to handle each of the different fields that might occur in a document.
+
+
+Elasticsearch provides a simple, coherent REST API 
+	managing your cluster and indexing and searching your data.	
+	you can easily submit requests directly from the command line or through the Developer Console in Kibana
+	
+	
+Search your data
+	The Elasticsearch REST APIs support structured queries, full text queries, and complex queries that combine the two
