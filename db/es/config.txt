@@ -39,22 +39,70 @@ ES_PATH_CONF
 data
 The location of the data files of each index / shard allocated on the node. Can hold multiple locations.
 /usr/local/var/lib/elasticsearch
-path.data
+setting node: path.data
 
 logs
 Log files location.
 /usr/local/var/log/elasticsearch
-path.logs
+setting node: path.logs
 
 plugins
 Plugin files location. Each plugin will be contained in a subdirectory.
 /usr/local/var/homebrew/linked/elasticsearch/plugins
 
 
+----------------------------------------------------------
+mac config
 
-shards
-	Elasticsearch provides the ability to subdivide your index into multiple pieces called shards. When you create an index, you can simply define the number of shards that you want. Each shard is in itself a fully-functional and independent "index" that can be hosted on any node in the cluster.
+config file path
+/usr/local/etc/elasticsearch
+	elasticsearch.yml jvm.options log4j2.properties
 
-replicas
-	 it is very useful and highly recommended to have a failover mechanism in case a shard/node somehow goes offline or disappears for whatever reason. To this end, Elasticsearch allows you to make one or more copies of your index’s shards into what are called replica shards, or replicas for short.
+elasticsearch.yml
+# path setting
+	path.data: /usr/local/var/lib/elasticsearch/
+	path.logs: /usr/local/var/log/elasticsearch/
+
+# cluster name setting
+	cluster.name: elasticsearch_zlh
+
+# node name setting
+	node.name: node-1
+
+# network host setting	used for product
+	hetwork.host: 192.168.0.1
+
+# discovery and cluster formation settings
+	discovery.seed_hosts: ["host1", "host2"]
+	discovery.seed_hosts:
+	   - 192.168.1.10:9300
+	   - 192.168.1.11 
+	   - seeds.mydomain.com 
+	   - [0:0:0:0:0:ffff:c0a8:10c]:9301
+# cluster.initial_master_nodes: ["node-1", "node-2"]
+	cluster.initial_master_nodes: 
+	   - master-node-a
+	   - master-node-b
+	   - master-node-c
+
+
+Temporary directory settings
+
+
+
+
+jvm setings
+	By default, Elasticsearch automatically sizes JVM heap based on a node’s roles and total memory. 
+	Automatic heap sizing requires the bundled JDK or, if using a custom JRE location, a Java 14 or later JRE.
+
+
+
+JVM fatal error log setting
+
+RPM andDebian packages 
+	this directory is /var/log/elasticsearch.
+On Linux and MacOS and Windows distributions, 
+	the logs directory is located under the root of the Elasticsearch installation.
+	If this path is not suitable for receiving logs, modify the -XX:ErrorFile=... entry in jvm.options.
+
 

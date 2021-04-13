@@ -1,1 +1,14 @@
 .//usr/local/Cellar/kibana-full/7.12.0/libexec/node_modules/@elastic/elasticsearch
+
+start es
+	./bin/elasticsearch -d [-p pid]	// pid is file name
+
+get es pid
+	$ jps | grep Elasticsearch
+	14542 Elasticsearch
+
+kill -SIGTERM 14542 
+
+terminate es
+	pkill -F pid			// pid is file name
+

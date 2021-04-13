@@ -10,3 +10,55 @@ Elasticsearch provides a simple, coherent REST API
 	
 Search your data
 	The Elasticsearch REST APIs support structured queries, full text queries, and complex queries that combine the two
+
+
+node
+	When you start an instance of Elasticsearch, you are starting a node. 
+	An Elasticsearch cluster is a group of nodes that have the same cluster.name attribute.
+
+shards
+        Elasticsearch provides the ability to subdivide your index into multiple pieces called shards. When you create an index, you can simply define the number of shards that you want. Each shard is in itself a fully-functional and independent "index" that can be hosted on any node in the cluster.
+
+replicas
+         it is very useful and highly recommended to have a failover mechanism in case a shard/node somehow goes offline or disappears for whatever reason. To this end, Elasticsearch allows you to make one or more copies of your index’s shards into what are called replica shards, or replicas for short.
+
+
+Discovery
+	Discovery is the process where nodes find each other when the master is unknown, such as when a node has just started up or when the previous master has failed.
+	Discovery is the process by which the cluster formation module finds other nodes with which to form a cluster.
+
+	This process starts with a list of seed addresses from one or more seed hosts providers
+seed hosts Providers
+	two seed hosts providers: 
+		a settings-based: 
+			in elasticsearch.yml
+				discovery.seed_hosts:
+				   - 192.168.1.10:9300
+				   - 192.168.1.11
+				   - seeds.mydomain.com
+			
+		a file-based seed hosts provider.	
+			in elasticsearch.yml
+				discovery.seed_providers: file
+		file at $ES_PATH_CONF/unicast_hosts.txt
+
+unicast_host.txt example
+	10.10.10.5
+	10.10.10.6:9305
+	10.10.10.5:10005
+	# an IPv6 address
+	[2001:0db8:85a3:0000:0000:8a2e:0370:7334]:9301		
+
+	If the port number is not specified, Elasticsearch will implicitly use the first port in the port range given by transport.profiles.default.port, or by transport.port if transport.profiles.default.port is not set.
+
+
+boot es
+	To add a node to a cluster running on your local machine:
+	Set up a new Elasticsearch instance.
+Specify the name of the cluster with the cluster.name setting in elasticsearch.yml. For example, to add a node to the logging-prod cluster, add the line cluster.name: "logging-prod" to elasticsearch.yml.
+Start Elasticsearch. The node automatically discovers and joins the specified cluster.
+	
+
+	To add a node to a cluster running on multiple machines
+	you must also set discovery.seed_hosts so that the new node can discover the rest of its cluster.
+
