@@ -62,3 +62,212 @@ Start Elasticsearch. The node automatically discovers and joins the specified cl
 	To add a node to a cluster running on multiple machines
 	you must also set discovery.seed_hosts so that the new node can discover the rest of its cluster.
 
+
+
+ducument
+	Each document is a collection of fields, which each have their own data type. 	
+	
+	document metadata fileds
+		_index 	The index to which the document belongs
+		_type 	The document's mapping type
+		_id 	The document's ID
+		_source	The original JSON representing the body of the document.
+		_size 	The size of the _source field in bytes, provided by the mapper-size plugin.
+		_field_names All fields in the document which contain non-null values.
+		_ignored All fields in the document that have been ignored at index time because of ignore_malformed.	
+		_routing A custom routing value which routes a document to a particular shard.	
+	
+mapping 
+	Mapping is the process of defining how a document, and the fields it contains, are stored and indexed.
+	When mapping your data, you create a mapping definition, which contains a list of fields that are pertinent to the document. A mapping definition also includes metadata fields, like the _source field, which customize how a document’s associated metadata is handled.
+
+
+mapping - runtime fileds
+	
+
+field types
+	Flattened filed:
+		Given an object, the flattened mapping will parse out its leaf values and index them into one field as keywords. The object’s contents can then be searched through simple queries and aggregations.	
+
+	Nested: The nested type is a specialised version of the object data type that allows arrays of objects to be indexed in a way that they can be queried independently of each other. 
+
+template
+	index template
+		 While you can use component templates to construct index templates, they aren’t directly applied to a set of indices. Index templates can contain a collection of component templates, as well as directly specify settings, mappings, and aliases.	
+
+	component template
+		Component templates are reusable building blocks that configure mappings, settings, and aliases.
+
+template precedence
+	Composable templates > legacy templates
+	explicit settings on created > index template and its component templates
+	index template with the highest priority is used	
+
+
+ingest pipelines
+	Ingest pipelines let you perform common transformations on your data before indexing.
+
+
+Search
+	define runtime fields that exist only in a query
+
+Query
+
+	Boolean Query
+
+	Compound queries
+
+	Term-level queries
+
+	Full text queries
+
+	Geo
+
+	spatial queries
+
+Query rescorer
+
+	The query rescorer executes a second query only on the Top-K results returned by the query and post_filter phases.	
+
+
+Aggregation
+	An aggregation summarizes your data as metrics, statistics, or other analytics.
+
+	Bucket Aggregation
+		Each bucket is associated with a criterion (depending on the aggregation type) which determines whether or not a document in the current context "falls" into it.		
+		 can hold sub-aggregations.
+
+	Metrics Aggregation
+		The aggregations in this family compute metrics based on values extracted in one way or another from the documents that are being aggregated.	
+
+	Pipline Aggregation
+		Pipeline aggregations work on the outputs produced from other aggregations rather than from document sets, adding information to the output tree.
+
+		Parent
+			A family of pipeline aggregations that is provided with the output of its parent aggregation and is able to compute new buckets or new aggregations to add to existing buckets.
+	
+		Sibling
+			Pipeline aggregations that are provided with the output of a sibling aggregation and are able to compute a new aggregation which will be at the same level as the sibling aggregation.
+			Pipeline aggregations cannot have sub-aggregations
+
+
+
+
+Query DSL
+	Relevance scores
+		By default, Elasticsearch sorts matching search results by relevance score, which measures how well each document matches a query.
+	
+	Query context
+		query clause also calculates a relevance score in the _score metadata field.
+		Query context is in effect whenever a query clause is passed to a query parameter, such as the query parameter in the search API.
+
+
+GET /_search
+{
+  "query": { 			// query context
+    "bool": { 
+      "must": [
+        { "match": { "title":   "Search"        }},
+        { "match": { "content": "Elasticsearch" }}
+      ],
+      "filter": [ 		// filter context
+        { "term":  { "status": "published" }},
+        { "range": { "publish_date": { "gte": "2015-01-01" }}}
+      ]
+    }
+  }
+}
+
+	
+	Filtey context
+		Filter context is mostly used for filtering structured data
+
+	Leaf query clauses
+		match text, number, date or boolean value.
+		term 
+		range
+
+	Compound query clauses
+Boolean
+
+POST _search
+{
+  "query": {
+    "bool" : {
+      "must" : {
+        "term" : { "user.id" : "kimchy" }
+      },
+      "filter": {
+        "term" : { "tags" : "production" }
+      },
+      "must_not" : {
+        "range" : {
+          "age" : { "gte" : 10, "lte" : 20 }
+        }
+      },
+      "should" : [
+        { "term" : { "tags" : "env1" } },
+        { "term" : { "tags" : "deployed" } }
+      ],
+      "minimum_should_match" : 1,
+      "boost" : 1.0
+    }
+  }
+}
+
+Boosting
+	Returns documents matching a positive query while reducing the relevance score of documents that also match a negative query.
+	You can use the boosting query to demote certain documents without excluding them from the search results.
+
+GET /_search
+{
+  "query": {
+    "boosting": {
+      "positive": {
+        "term": {
+          "text": "apple"
+        }
+      },
+      "negative": {
+        "term": {
+          "text": "pie tart fruit crumble tree"
+        }
+      },
+      "negative_boost": 0.5
+    }
+  }
+}
+
+Constant score query
+
+Wraps a filter query and returns every matching document with a relevance score equal to the boost parameter value.
+
+Geo queries
+	Don't care
+
+
+Joining queries
+	1.Nested	2. has child	3. has parent	4 Parent ID
+
+
+	parent-child relationships	[join field type]
+		You can create parent-child relationships between documents in the same index using a join field mapping.
+
+
+Term
+	功能比match弱一点的字段查询	
+	Returns documents that contain an exact term in a provided field.
+
+
+Span queries
+	low-level positional queries which provide expert control over the order and proximity of the specified terms.
+	Span queries cannot be mixed with non-span queries (with the exception of the span_multi query).
+	
+	outer span query
+		is allowed to set boost
+
+	inner span query
+		is not allowed to set boost
+
+
+

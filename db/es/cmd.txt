@@ -12,3 +12,7 @@ kill -SIGTERM 14542
 terminate es
 	pkill -F pid			// pid is file name
 
+
+curl -X<VERB> '<PROTOCOL>://<HOST>:<PORT>/<PATH>?<QUERY_STRING>' -d '<BODY>'
+
+Content-Type application/json
