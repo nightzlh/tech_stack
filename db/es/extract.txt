@@ -270,4 +270,8 @@ Span queries
 		is not allowed to set boost
 
 
+span term query
+		
 
+Span near query (example in office)
+		

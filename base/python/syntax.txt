@@ -1,0 +1,8 @@
+scope
+
+Assignments do not copy data 
+
+In fact, all operations that introduce new names use the local scope: in particular, import statements and function definitions bind the module or function name in the local scope.
+
+keywords: global or nonlocal
+	The global statement can be used to indicate that particular variables live in the global scope and should be rebound there; the nonlocal statement indicates that particular variables live in an enclosing scope and should be rebound there.
