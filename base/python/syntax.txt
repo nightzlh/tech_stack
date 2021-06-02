@@ -6,3 +6,8 @@ In fact, all operations that introduce new names use the local scope: in particu
 
 keywords: global or nonlocal
 	The global statement can be used to indicate that particular variables live in the global scope and should be rebound there; the nonlocal statement indicates that particular variables live in an enclosing scope and should be rebound there.
+
+
+Class definitions, like function definitions (def statements) must be executed before they have any effect.
+
+When a class definition is left normally (via the end), a class object is created. 

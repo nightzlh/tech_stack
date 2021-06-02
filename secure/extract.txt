@@ -1,0 +1,24 @@
+Public key certificate digital certificate identity certificate
+	In cryptography, a public key certificate, also known as a digital certificate or identity certificate, is an electronic document used to prove the ownership of a public key.[1] The certificate includes information about the key, information about the identity of its owner (called the subject), and the digital signature of an entity that has verified the certificate's contents (called the issuer). 
+	
+	
+ certificate's subject
+	In email encryption, code signing, and e-signature systems, a certificate's subject is typically a person or organization.	
+	in Transport Layer Security (TLS) a certificate's subject is typically a computer or other device, though TLS certificates may identify organizations or individuals in addition to their core role in identifying devices.
+
+
+STL * SSL
+	 TLS, sometimes called by its older name Secure Sockets Layer (SSL), is notable for being a part of HTTPS, a protocol for securely browsing the web.
+
+
+
+Public key infrastructure PKI
+	A public key infrastructure (PKI) is a set of roles, policies, hardware, software and procedures needed to create, manage, distribute, use, store and revoke digital certificates and manage public-key encryption.
+
+web of trust
+	In cryptography, a web of trust is a concept used in PGP, GnuPG, and other OpenPGP-compatible systems to establish the authenticity of the binding between a public key and its owner. 
+
+
+
+TLS/SSL server certificate
+
