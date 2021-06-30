@@ -1,0 +1,8 @@
+https://laysent.com/blog/post/android-app-reverse-engineering-tutorial/
+
+yui + yui-config
+react + browserify + yui
+angular + browserify + yui
+react + browserify
+jquery + require
+trunkjs + webcomponent

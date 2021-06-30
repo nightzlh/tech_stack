@@ -1,0 +1,12 @@
+export HADOOP_MAPRED_HOME="/opt/hadoop-3.3.1"
+export HADOOP_HOME="/opt/hadoop-3.3.1"
+export PATH="$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH"
+
+
+#export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+
+#export HADOOP_OPTS="-Djava.library.path=$HADOOP_COMMON_LIB_NATIVE_DIR"
+
+
+export HIVE_HOME="/opt/apache-hive-3.1.2-bin"
+export PATH="$HIVE_HOME/bin:$PATH"

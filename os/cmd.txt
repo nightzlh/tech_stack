@@ -2,3 +2,17 @@ pwd -P 显示当前工作目录的真实路径，非软链接路径
 redirect
 
 scp -r fund_test:/home/alachess/retail/server/logs/tmp
+
+sshd
+
+1.编辑/etc/sshd_config文件，注释掉
+#ForceCommand /usr/local/bin/ssh_session
+
+2.启动sshd服务：
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+
+3.停止sshd服务：
+sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+
+4查看是否启动：
+sudo launchctl list | grep ssh

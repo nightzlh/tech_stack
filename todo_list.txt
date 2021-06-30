@@ -1,0 +1,5 @@
+lsof -i 
+sudo lsof -i 区别
+
+lsof -i netstat 区别
+这些命令的查找目标与用户的关系

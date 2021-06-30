@@ -6,3 +6,10 @@ https://www.ssl.com/faqs/faq-what-is-ssl/
 
 https://www.barretlee.com/blog/2016/04/24/detail-about-ca-and-certs/
 
+https://en.wikipedia.org/wiki/Public_key_certificate
+
+https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/74
+
+https://zhuanlan.zhihu.com/p/60392573
+
+https://laysent.com/blog/post/android-app-reverse-engineering-tutorial/
